@@ -365,9 +365,7 @@ public class Controller
             joPho.addProperty("description", phone.getDescription());
             innerContactArray.add(joPho);
         }
-        JsonObject joAdd = new JsonObject();
 
-//            joAdd.addProperty("address", person.getAddress().toString());
         jo.add("phoneList", innerContactArray);
         return jo;
         
