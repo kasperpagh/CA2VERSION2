@@ -26,9 +26,9 @@ import javax.persistence.OneToMany;
  */
 @Entity
 @NamedQueries(
-{
-    @NamedQuery(name = "Person.findAll", query = "SELECT p FROM Person p")
-})
+        {
+            @NamedQuery(name = "Person.findAll", query = "SELECT p FROM Person p")
+        })
 public class Person extends InfoEntity implements Serializable
 {
 
@@ -44,7 +44,7 @@ public class Person extends InfoEntity implements Serializable
 
     public void addHobbyToPerson(Hobby h)
     {
-        if(hobbyList == null)
+        if (hobbyList == null)
         {
             hobbyList = new ArrayList();
             hobbyList.add(h);
@@ -54,6 +54,7 @@ public class Person extends InfoEntity implements Serializable
             hobbyList.add(h);
         }
     }
+
     public Person()
     {
     }
@@ -65,6 +66,12 @@ public class Person extends InfoEntity implements Serializable
         this.hobbyList = hobbyList;
     }
 
+    public Person(String firstName, String lastName)
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Collection<Hobby> getHobbyList()
     {
         return hobbyList;
@@ -74,7 +81,6 @@ public class Person extends InfoEntity implements Serializable
     {
         this.hobbyList = hobbyList;
     }
-    
 
     public String getFirstName()
     {
@@ -96,7 +102,6 @@ public class Person extends InfoEntity implements Serializable
         this.lastName = lastName;
     }
 
-    
 //    public Integer getId()
 //    {
 //        return id;
@@ -106,8 +111,4 @@ public class Person extends InfoEntity implements Serializable
 //    {
 //        this.id = id;
 //    }
-
-
-
-    
 }

@@ -348,8 +348,6 @@ public class Controller
     {
         Gson gson;
         gson = new GsonBuilder().setPrettyPrinting().create();
-        
-        JsonArray outerArray = new JsonArray();
         JsonArray innerContactArray;
         Person person = getPersonById(id);
         JsonObject jo = new JsonObject();
